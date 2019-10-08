@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SmartBus</string>
+    <string name="bottom_nav_search">Search</string>
+    <string name="bottom_nav_overflow">More</string>
+    <string name="bottom_nav_wallet">Wallet</string>
+    <string name="search_source">Source</string>
+    <string name="search_destination">Destination</string>
+    <string name="heading_nearby_bus_stops">Nearby Bus Stops</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/bottom_nav_search"
+        android:icon="@drawable/ic_search_24px"/>
+    <item android:title="@string/bottom_nav_wallet"
+        android:icon="@drawable/wallet_24px"/>
+    <item android:title="@string/bottom_nav_overflow"
+        android:icon="@drawable/ic_round_menu_24px"/>
+</menu>
