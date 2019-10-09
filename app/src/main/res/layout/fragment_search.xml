@@ -37,11 +37,13 @@
 
         <TextView
             android:paddingTop="15dp"
+            android:id="@+id/results_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/heading_nearby_bus_stops"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nearby_stop_list"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -50,6 +52,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:src="@drawable/ic_search_24px"
+        android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

@@ -8,11 +8,14 @@
     tools:context=".MainActivity">
 
     <!--    Fragment-->
-    <FrameLayout
-        android:id="@+id/fragment_frame"
-        android:layout_marginBottom="?attr/actionBarSize"
+    <fragment
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:id="@+id/nav_host_fragment" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
