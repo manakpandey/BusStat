@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SmartBus</string>
+    <string name="Username">Username</string>
+    <string name="View">View</string>
+    <string name="Busnumber">Bus</string>
+    <string name="source">From</string>
+    <string name="destination">To</string>
+    <string name="price">Price</string>
+    <string name="Time">Time</string>
+    <string name="useremail">Email</string>
 </resources>
