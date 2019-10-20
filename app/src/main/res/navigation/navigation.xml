@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
     app:startDestination="@id/dest_search">
 
     <fragment
         android:id="@+id/dest_search"
         android:name="com.ugdevs.smartbus.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+    </fragment>
+    <fragment
+        android:id="@+id/dest_displayFragment"
+        android:name="com.ugdevs.smartbus.DisplayFragment"
+        android:label="DisplayFragment" />
+    <fragment
+        android:id="@+id/dest_moreFragment"
+        android:name="com.ugdevs.smartbus.MoreFragment"
+        android:label="MoreFragment" />
 </navigation>

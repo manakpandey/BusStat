@@ -6,4 +6,6 @@
     <string name="search_source">Source</string>
     <string name="search_destination">Destination</string>
     <string name="heading_nearby_bus_stops">Nearby Bus Stops</string>
+    <string name="bus_results">Upcoming Buses</string>
+    <string name="enjoy_your_journey">Enjoy Your Journey</string>
 </resources>

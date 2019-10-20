@@ -10,7 +10,7 @@
     <!--    Fragment-->
     <fragment
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:navGraph="@navigation/navigation"
         app:defaultNavHost="true"
@@ -22,6 +22,7 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
+        android:id="@+id/bottom_nav"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/colorAccent"/>
 
