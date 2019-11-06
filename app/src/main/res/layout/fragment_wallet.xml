@@ -10,7 +10,8 @@
         android:id="@+id/wallet"
         android:layout_marginTop="100sp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_account_balance_wallet_black_24dp"/>
+        android:src="@drawable/ic_wallet_96dp"
+        android:contentDescription="@string/wallet_icon" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         android:textSize="60sp"
         android:id="@+id/wallet_balance"
         android:layout_gravity="center"
-        android:drawableLeft="@drawable/ic_rupee_indian"
+        android:drawableStart="@drawable/ic_rupee_indian"
         android:drawableTint="@color/white"
         android:textColor="#FFFFFF"/>
 

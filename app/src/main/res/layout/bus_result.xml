@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bus_result_card"
     android:elevation="8dp"
-    android:layout_margin="2dp"
+    android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
@@ -48,15 +48,6 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_weight="2"/>
-
-        <ImageButton
-            android:layout_gravity="center"
-            android:id="@+id/bus_pay"
-            android:background="@android:drawable/list_selector_background"
-            android:src="@drawable/ic_navigate_next_24px"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
 
     </LinearLayout>
 

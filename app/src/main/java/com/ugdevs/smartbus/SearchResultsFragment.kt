@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley
 import com.ugdevs.smartbus.utils.BusResultAdapter
 import com.ugdevs.smartbus.utils.MainViewModel
 import kotlinx.android.synthetic.main.fragment_search_results.*
+import java.util.*
 import kotlin.collections.HashMap
 import kotlin.math.acos
 import kotlin.math.cos
@@ -57,6 +58,8 @@ class SearchResultsFragment: Fragment() {
 
         val src = model.searchSrc
         val dest = model.searchDest
+        val heading = "${src.toUpperCase(Locale.ENGLISH)} -> ${dest.toUpperCase(Locale.ENGLISH)}"
+        result_heading.text = heading
         val res= mutableListOf<HashMap<String,String>>()
 
         val queue = Volley.newRequestQueue(activity)

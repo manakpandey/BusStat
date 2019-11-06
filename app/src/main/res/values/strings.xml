@@ -16,4 +16,5 @@
     <string name="no_direct_buses_available">Sorry! No Direct Buses Available</string>
     <string name="server_unavailable">Could not reach our Servers at the moment</string>
     <string name="token_error">Error retrieving token from server</string>
+    <string name="wallet_icon">Wallet Icon</string>
 </resources>
