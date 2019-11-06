@@ -77,6 +77,49 @@ class SearchResultsFragment: Fragment() {
 
                     res.add(data)
                 }
+
+                url = "http://192.168.43.21:8000/stops/$src/"
+                val jsonObjectRequest = JsonObjectRequest(
+                    Request.Method.GET, url, null,
+                    Response.Listener { response1 ->
+                        if (!response1.has("invalid")) {
+                            val lat = response1.getString("lat")
+                            val lon = response1.getString("lon")
+                            busResultAdapter.setResults(res)
+                            if (res.isEmpty()) {
+                                searchResultList.visibility = View.GONE
+                                tv_no_results.visibility = View.VISIBLE
+                                loading_results.visibility = View.GONE
+                            } else {
+                                searchResultList.visibility = View.VISIBLE
+                                tv_no_results.visibility = View.GONE
+                                tv_no_network.visibility = View.GONE
+                                loading_results.visibility = View.GONE
+                            }
+                            for (i in res) {
+                                i["eta"] = calculateEta(
+                                    lat,
+                                    lon,
+                                    i["curr_lat"],
+                                    i["curr_lon"],
+                                    i["avg_speed"]
+                                )
+                                busResultAdapter.setResults(res)
+                            }
+                        }
+                        else{
+                            searchResultList.visibility = View.GONE
+                            tv_no_results.visibility = View.VISIBLE
+                            loading_results.visibility = View.GONE
+                        }
+                    },
+                    Response.ErrorListener { error ->
+                        Log.d("SearchFragmentError", "Error: $error")
+                        tv_no_results.visibility = View.GONE
+                        tv_no_network.visibility = View.VISIBLE
+                        loading_results.visibility = View.GONE
+                    })
+                queue.add(jsonObjectRequest)
             },
             Response.ErrorListener { error ->
                 Log.d("SearchFragmentError", "Error: $error")
@@ -87,36 +130,7 @@ class SearchResultsFragment: Fragment() {
         )
 
         queue.add(jsonArrayRequest)
-        url = "http://192.168.43.21:8000/stops/$src/"
-        val jsonObjectRequest = JsonObjectRequest(
-            Request.Method.GET, url, null,
-            Response.Listener { response ->
-                val lat = response.getString("lat")
-                val lon = response.getString("lon")
-                busResultAdapter.setResults(res)
-                if (res.isEmpty()){
-                    searchResultList.visibility = View.GONE
-                    tv_no_results.visibility = View.VISIBLE
-                    loading_results.visibility = View.GONE
-                }
-                else{
-                    searchResultList.visibility = View.VISIBLE
-                    tv_no_results.visibility = View.GONE
-                    tv_no_network.visibility = View.GONE
-                    loading_results.visibility = View.GONE
-                }
-                for (i in res){
-                    i["eta"] = calculateEta(lat,lon,i["curr_lat"],i["curr_lon"],i["avg_speed"])
-                    busResultAdapter.setResults(res)
-                }
-            },
-            Response.ErrorListener { error ->
-                Log.d("SearchFragmentError", "Error: $error")
-                tv_no_results.visibility = View.GONE
-                tv_no_network.visibility = View.VISIBLE
-                loading_results.visibility = View.GONE
-            })
-        queue.add(jsonObjectRequest)
+
     }
 
 
