@@ -4,12 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wallet"
+        android:layout_marginTop="100sp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_account_balance_wallet_black_24dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="60sp"
         android:id="@+id/wallet_balance"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_rupee_indian"
+        android:drawableTint="@color/white"
+        android:textColor="#FFFFFF"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

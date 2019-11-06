@@ -8,6 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Results:"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:textSize="20sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_no_results"
         android:layout_gravity="center"
-        android:text="@string/no_direst_buses_available"
+        android:text="@string/no_direct_buses_available"
         android:textSize="20sp"/>
 
     <TextView

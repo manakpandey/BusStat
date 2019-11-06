@@ -23,9 +23,9 @@ class MoreFragment :Fragment(){
 
         val sharedPref = activity?.getSharedPreferences(activity?.getString(R.string.preference_file_key), Context.MODE_PRIVATE)
         val username = sharedPref?.getString("username","")
-        val userText = "Hey, $username"
+        val userText = "Welcome, $username"
         more_username.text = userText
-        val logoutText = "Not $username, logout?"
+        val logoutText = "Not $username ? Logout."
         logout_button.text = logoutText
         logout_button.setOnClickListener {
 
