@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.toolbox.Volley
 import com.ugdevs.smartbus.DisplayFragment
 import com.ugdevs.smartbus.R
 
@@ -30,15 +31,10 @@ class BusResultAdapter: RecyclerView.Adapter<BusResultAdapter.ViewHolder>() {
         holder.busVac.text = results[position]["vac"]
 
         holder.busResultCard.setOnClickListener {view->
-            val code = getCodeFromServer(results[position])
-            model.setValue(code, results[position])
+
+            model.selectedBus = results[position]
             view.findNavController().navigate(R.id.dest_displayFragment)
         }
-    }
-
-
-    private fun getCodeFromServer(details: HashMap<String, String>): String {
-        return "sdg46s"
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

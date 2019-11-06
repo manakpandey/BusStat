@@ -19,4 +19,8 @@
         android:id="@+id/dest_moreFragment"
         android:name="com.ugdevs.smartbus.MoreFragment"
         android:label="MoreFragment" />
+    <fragment
+        android:id="@+id/dest_searchResultsFragment"
+        android:name="com.ugdevs.smartbus.SearchResultsFragment"
+        android:label="SearchResultsFragment" />
 </navigation>

@@ -4,11 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel(){
-    var code = ""
-    var details = HashMap<String,String>()
 
-    fun setValue(code: String, details: HashMap<String,String>){
-        this.code = code
-        this.details = details
+    var searchSrc = ""
+    var searchDest = ""
+
+    var selectedBus = HashMap<String,String>()
+
+    val busResults: MutableLiveData<List<HashMap<String,String>>> by lazy {
+        MutableLiveData<List<HashMap<String,String>>>()
     }
 }
