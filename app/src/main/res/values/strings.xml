@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">SmartBus</string>
+    <string name="bottom_nav_search">Search</string>
+    <string name="bottom_nav_overflow">More</string>
+    <string name="bottom_nav_wallet">Wallet</string>
+    <string name="search_source">Source</string>
+    <string name="search_destination">Destination</string>
+    <string name="heading_nearby_bus_stops">Nearby Bus Stops</string>
+    <string name="bus_results">Upcoming Buses</string>
+    <string name="enjoy_your_journey">Enjoy Your Journey</string>
+    <string name="more_your_past_trips">Your Past Trips:</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_username_hint">Username</string>
+    <string name="login_button">Login</string>
+    <string name="preference_file_key">user_data</string>
+    <string name="no_direst_buses_available">No Direst Buses Available</string>
+    <string name="server_unavailable">Could not reach our Servers at the moment</string>
+    <string name="token_error">Error retrieving token from server</string>
 </resources>
