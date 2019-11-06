@@ -13,7 +13,7 @@
     </fragment>
     <fragment
         android:id="@+id/dest_displayFragment"
-        android:name="com.ugdevs.smartbus.DisplayFragment"
+        android:name="com.ugdevs.smartbus.DisplayTokenFragment"
         android:label="DisplayFragment" />
     <fragment
         android:id="@+id/dest_moreFragment"
@@ -23,4 +23,8 @@
         android:id="@+id/dest_searchResultsFragment"
         android:name="com.ugdevs.smartbus.SearchResultsFragment"
         android:label="SearchResultsFragment" />
+    <fragment
+        android:id="@+id/dest_walletFragment"
+        android:name="com.ugdevs.smartbus.WalletFragment"
+        android:label="WalletFragment" />
 </navigation>

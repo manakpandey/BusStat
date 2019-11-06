@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?:return
         val navController = host.navController
 
@@ -25,9 +23,7 @@ class MainActivity : AppCompatActivity() {
             when {
                 it.itemId == R.id.nav_search -> navController.navigate(R.id.dest_search)
                 it.itemId == R.id.nav_more -> navController.navigate(R.id.dest_moreFragment)
-                it.itemId == R.id.nav_wallet -> {
-
-                }
+                it.itemId == R.id.nav_wallet -> navController.navigate(R.id.dest_walletFragment)
             }
         true
         }

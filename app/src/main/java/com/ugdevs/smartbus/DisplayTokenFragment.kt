@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_display.*
 import org.jetbrains.anko.toast
 import org.json.JSONObject
 
-class DisplayFragment : Fragment(){
+class DisplayTokenFragment : Fragment(){
 
     private lateinit var model: MainViewModel
 
@@ -58,6 +58,9 @@ class DisplayFragment : Fragment(){
         data["id"] = username!!
         data["password"] = pwd!!
 
+        token_layout.visibility = View.VISIBLE
+        tv_token_unavailable.visibility = View.GONE
+
         val jsonObjectRequest1 = JsonObjectRequest(Request.Method.POST, url1, JSONObject(data),
             Response.Listener {
                 if (!it.has("access")){
@@ -68,7 +71,9 @@ class DisplayFragment : Fragment(){
                 }
             },
             Response.ErrorListener {
-                Log.d("DisplayFragment", "Error: $it")
+                Log.d("DisplayTokenFragment", "Error: $it")
+                token_layout.visibility = View.GONE
+                tv_token_unavailable.visibility = View.VISIBLE
             })
         queue.add(jsonObjectRequest1)
 
@@ -82,7 +87,9 @@ class DisplayFragment : Fragment(){
                     display_code.text = it.getString("id")
                 },
                 Response.ErrorListener {
-                    Log.d("DisplayFragment", "Error: $it")
+                    Log.d("DisplayTokenFragment", "Error: $it")
+                    token_layout.visibility = View.GONE
+                    tv_token_unavailable.visibility = View.VISIBLE
                 })
             queue.add(jsonObjectRequest2)
         }

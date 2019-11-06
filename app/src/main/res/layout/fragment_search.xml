@@ -20,7 +20,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/search_source"
                 android:nextFocusForward="@id/search_destination"
-                android:maxLines="1"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_source" />
@@ -35,7 +35,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/search_destination"
                 android:nextFocusForward="@id/search_button"
-                android:maxLines="1"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_destination" />

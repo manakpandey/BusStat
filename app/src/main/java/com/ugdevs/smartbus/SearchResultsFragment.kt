@@ -45,7 +45,6 @@ class SearchResultsFragment: Fragment() {
         val searchResultList = view.findViewById<RecyclerView>(R.id.search_result_list)
         val busResultAdapter = BusResultAdapter()
 
-        getResults()
 
         searchResultList.layoutManager = LinearLayoutManager(view.context)
         busResultAdapter.setModel(model)
@@ -56,18 +55,6 @@ class SearchResultsFragment: Fragment() {
         searchResultList.visibility = View.VISIBLE
         loading_results.visibility = View.VISIBLE
 
-        model.busResults.observe(this, Observer<List<HashMap<String,String>>>{
-            busResultAdapter.setResults(it)
-            loading_results.visibility = View.GONE
-            if (it.isEmpty()){
-                searchResultList.visibility = View.GONE
-                tv_no_results.visibility = View.VISIBLE
-            }
-
-        })
-    }
-
-    private fun getResults(){
         val src = model.searchSrc
         val dest = model.searchDest
         val res= mutableListOf<HashMap<String,String>>()
@@ -93,6 +80,7 @@ class SearchResultsFragment: Fragment() {
             },
             Response.ErrorListener { error ->
                 Log.d("SearchFragmentError", "Error: $error")
+                tv_no_results.visibility = View.GONE
                 tv_no_network.visibility = View.VISIBLE
                 loading_results.visibility = View.GONE
             }
@@ -105,20 +93,32 @@ class SearchResultsFragment: Fragment() {
             Response.Listener { response ->
                 val lat = response.getString("lat")
                 val lon = response.getString("lon")
-                model.busResults.value = res
+                busResultAdapter.setResults(res)
+                if (res.isEmpty()){
+                    searchResultList.visibility = View.GONE
+                    tv_no_results.visibility = View.VISIBLE
+                    loading_results.visibility = View.GONE
+                }
+                else{
+                    searchResultList.visibility = View.VISIBLE
+                    tv_no_results.visibility = View.GONE
+                    tv_no_network.visibility = View.GONE
+                    loading_results.visibility = View.GONE
+                }
                 for (i in res){
                     i["eta"] = calculateEta(lat,lon,i["curr_lat"],i["curr_lon"],i["avg_speed"])
-                    model.busResults.value = res
-
+                    busResultAdapter.setResults(res)
                 }
             },
             Response.ErrorListener { error ->
                 Log.d("SearchFragmentError", "Error: $error")
+                tv_no_results.visibility = View.GONE
                 tv_no_network.visibility = View.VISIBLE
                 loading_results.visibility = View.GONE
             })
         queue.add(jsonObjectRequest)
     }
+
 
     private fun calculateEta(
         lat: String?,

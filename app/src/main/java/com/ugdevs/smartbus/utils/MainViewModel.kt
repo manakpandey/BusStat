@@ -10,7 +10,11 @@ class MainViewModel : ViewModel(){
 
     var selectedBus = HashMap<String,String>()
 
-    val busResults: MutableLiveData<List<HashMap<String,String>>> by lazy {
-        MutableLiveData<List<HashMap<String,String>>>()
+//    val busResults: MutableLiveData<List<HashMap<String,String>>> by lazy {
+//        MutableLiveData<List<HashMap<String,String>>>()
+//    }
+
+    val searchFlag: MutableLiveData<Boolean> by lazy {
+        MutableLiveData<Boolean>()
     }
 }

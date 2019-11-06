@@ -35,7 +35,9 @@ class SearchFragment: Fragment() {
         val searchButton = view.findViewById<FloatingActionButton>(R.id.search_button)
 
         searchButton.setOnClickListener {
-            if (!(searchSource.text!!.isBlank() || searchDestination.text!!.isBlank())){
+            if (!(searchSource.text!!.isBlank() || searchDestination.text!!.isBlank()) &&
+                    searchSource.text.toString().toLowerCase(Locale.ENGLISH) != searchDestination.text.toString().toLowerCase(
+                    Locale.ENGLISH)){
                 model.searchSrc = searchSource.text.toString().toLowerCase(Locale.ENGLISH)
                 model.searchDest = searchDestination.text.toString().toLowerCase(Locale.ENGLISH)
                 findNavController().navigate(R.id.dest_searchResultsFragment)

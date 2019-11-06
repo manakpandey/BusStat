@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
+import android.view.View
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -29,13 +30,17 @@ class LoginActivity : AppCompatActivity() {
         }
 
         login_button.setOnClickListener {
+
             if (!(login_username.text!!.isBlank() || login_password.text!!.isBlank())){
+                login_progress.visibility = View.VISIBLE
                 verifyUser(login_username.text.toString(),login_password.text.toString(), sharedPref)
             }
-            else
+            else {
                 toast("Please enter credentials")
+            }
         }
     }
+
 
     private fun verifyUser(username: String, password: String, sharedPref: SharedPreferences){
 
@@ -59,11 +64,13 @@ class LoginActivity : AppCompatActivity() {
                     startActivity<MainActivity>()
                 }
                 else{
+                    login_progress.visibility = View.GONE
                     toast("Invalid Credentials")
                 }
             },
             Response.ErrorListener {
                 Log.d("LoginActivity", "Error: $it")
+                login_progress.visibility = View.GONE
                 toast("Login Failed")
             })
 

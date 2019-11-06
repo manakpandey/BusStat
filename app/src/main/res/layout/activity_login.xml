@@ -20,8 +20,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_username"
-                android:nextFocusForward="@id/login_password"
-                android:maxLines="1"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_username_hint" />
@@ -35,7 +34,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password"
-                android:nextFocusForward="@id/search_button"
                 android:maxLines="1"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
@@ -44,7 +42,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Button"
@@ -53,5 +51,12 @@
             android:text="@string/login_button"
             android:layout_gravity="center"/>
     </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:id="@+id/login_progress"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
