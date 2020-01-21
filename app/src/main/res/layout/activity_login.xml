@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bus_side_view"
+        android:layout_gravity="center_horizontal"
+        app:layout_anchor="@id/login_username"
+        app:layout_anchorGravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.MaterialComponents.Button"
-            android:background="@color/aqua"
+            android:background="@color/light_pink"
+            android:textColor="#121212"
             android:layout_marginTop="15dp"
             android:id="@+id/login_button"
             android:text="@string/login_button"

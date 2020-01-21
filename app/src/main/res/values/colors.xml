@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
-    <color name="aqua">#00bfa5 </color>
-    <color name="light_aqua">#69f0ae</color>
+    <color name="light_pink">#fedbd0</color>
+    <color name="lighter_pink">#feeae6</color>
 </resources>

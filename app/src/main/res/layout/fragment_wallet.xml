@@ -21,8 +21,6 @@
         android:id="@+id/wallet_balance"
         android:layout_gravity="center"
         android:drawableStart="@drawable/ic_rupee_indian"
-        android:drawableTint="@color/white"
-        android:textColor="#FFFFFF"
         tools:targetApi="m" />
 
 

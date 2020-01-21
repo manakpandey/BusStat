@@ -26,7 +26,16 @@
             android:padding="20dp"
             android:id="@+id/display_code"
             android:layout_gravity="center"
-            android:layout_weight="4"/>
+            android:layout_weight="2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="40sp"
+            android:src="@drawable/ic_accept_circular_button_outline"
+            android:padding="20dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,6 +51,9 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="10dp"
+            android:drawableStart="@drawable/ic_rupee_indian"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
             android:textSize="30sp"
             android:id="@+id/display_amt"
             android:layout_gravity="center"/>

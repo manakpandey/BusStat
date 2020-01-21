@@ -48,12 +48,14 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:src="@drawable/ic_search_24px"
         android:id="@+id/search_button"
-        android:backgroundTint="@color/light_aqua"
-        android:background="@color/light_aqua"
+        android:backgroundTint="@color/lighter_pink"
+        android:background="@color/lighter_pink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        app:borderWidth="0dp"
         android:layout_margin="20dp"
         app:rippleColor="@color/white"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

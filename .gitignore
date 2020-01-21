@@ -12,3 +12,14 @@
 /captures
 .externalNativeBuild
 .cxx
+/API/.idea/caches
+/API/.idea/libraries
+/API/.idea/modules.xml
+/API/.idea/workspace.xml
+/API/.idea/navEditor.xml
+/API/.idea/assetWizardSettings.xml
+/API/_pycache_
+/API/.idea/inspectionProfiles/profiles_settings.xml
+/API/.idea/misc.xml
+db.sqlite3
+/API/venv

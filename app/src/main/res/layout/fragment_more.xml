@@ -19,6 +19,7 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:id="@+id/logout_button"
+        android:textColor="#442c2e"
         android:textSize="20sp"
         android:textAlignment="center"/>
 

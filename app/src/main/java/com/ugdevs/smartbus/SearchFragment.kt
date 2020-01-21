@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.ugdevs.smartbus.utils.MainViewModel
+import kotlinx.android.synthetic.main.fragment_search.*
 import java.util.*
 
 class SearchFragment: Fragment() {
@@ -34,6 +35,7 @@ class SearchFragment: Fragment() {
         val searchDestination: TextInputEditText = view.findViewById(R.id.search_destination)
         val searchButton = view.findViewById<FloatingActionButton>(R.id.search_button)
 
+
         searchButton.setOnClickListener {
             if (!(searchSource.text!!.isBlank() || searchDestination.text!!.isBlank()) &&
                     searchSource.text.toString().toLowerCase(Locale.ENGLISH) != searchDestination.text.toString().toLowerCase(
@@ -43,6 +45,7 @@ class SearchFragment: Fragment() {
                 findNavController().navigate(R.id.dest_searchResultsFragment)
             }
         }
+
     }
 
 

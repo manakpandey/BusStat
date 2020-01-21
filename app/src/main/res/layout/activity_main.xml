@@ -21,10 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        android:background="@color/aqua"
+        android:background="@color/light_pink"
         android:id="@+id/bottom_nav"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/white"/>
+        app:menu="@menu/bottom_nav_menu"/>
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
